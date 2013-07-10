@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<filter>
+		<filter-name>rendering</filter-name>
+		<filter-class>net.rstyles.lab.apps.gae.brownout.servlet.filter.tepco.epsd.RenderingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>rendering</filter-name>
+		<servlet-name>render</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter>
+		<filter-name>min-rendering</filter-name>
+		<filter-class>net.rstyles.lab.apps.gae.brownout.servlet.filter.tepco.epsd.RenderingCurrentFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>min-rendering</filter-name>
+		<servlet-name>min-render</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>min-render</servlet-name>
+		<servlet-class>net.rstyles.lab.apps.gae.brownout.servlet.tepco.epsd.VelocityRender</servlet-class>
+		<init-param>
+			<param-name>org.apache.velocity.properties</param-name>
+			<param-value>/WEB-INF/velocity.properties</param-value>
+		</init-param>
+		<load-on-startup>10</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>min-render</servlet-name>
+		<url-pattern>/tepco/min/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>render</servlet-name>
+		<servlet-class>net.rstyles.lab.apps.gae.brownout.servlet.tepco.epsd.VelocityRender</servlet-class>
+		<init-param>
+			<param-name>org.apache.velocity.properties</param-name>
+			<param-value>/WEB-INF/velocity.properties</param-value>
+		</init-param>
+		<load-on-startup>10</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>render</servlet-name>
+		<url-pattern>*.html</url-pattern>
+		<url-pattern>*.htm</url-pattern>
+		<url-pattern>*.xml</url-pattern>
+		<url-pattern>*.json</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>tepco-epsd-crawler</servlet-name>
+		<servlet-class>net.rstyles.lab.apps.gae.brownout.servlet.tepco.epsd.Crawler</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tepco-epsd-crawler</servlet-name>
+		<url-pattern>/tepco/cron/sd-crawler</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>tepco-twitter-crawler</servlet-name>
+		<servlet-class>net.rstyles.lab.apps.gae.brownout.servlet.tepco.epsd.TwitterCrawler</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tepco-twitter-crawler</servlet-name>
+		<url-pattern>/tepco/cron/twitter-crawler</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>tepco-epsd-analyzer</servlet-name>
+		<servlet-class>net.rstyles.lab.apps.gae.brownout.servlet.tepco.epsd.task.Analyzer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tepco-epsd-analyzer</servlet-name>
+		<url-pattern>/tepco/task/sd-analyzer</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>tepco-epsd-render</servlet-name>
+		<servlet-class>net.rstyles.lab.apps.gae.brownout.servlet.tepco.epsd.ForwardRender</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tepco-epsd-render</servlet-name>
+		<url-pattern>/tepco/sd-table</url-pattern>
+		<url-pattern>/tepco/sd-table-all</url-pattern>
+	</servlet-mapping>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>program-managed-request</web-resource-name>
+			<url-pattern>/tepco/cron/sd-crawler</url-pattern>
+			<url-pattern>/tepco/cron/twitter-crawler</url-pattern>
+			<url-pattern>/tepco/task/sd-analyzer</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>index.html</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>index.html</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.RuntimeException</exception-type>
+		<location>index.html</location>
+	</error-page>
+
+</web-app>

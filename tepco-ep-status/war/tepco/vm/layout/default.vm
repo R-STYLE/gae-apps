@@ -1,0 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="viewport" content="width=device-width">
+<meta name="apple-mobile-web-app-capable" content="YES">
+<title>$!{page_title}</title>
+<link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen, tv, projection">
+</head>
+$screen_content
+</html>

@@ -1,0 +1,21 @@
+<body id="tepco-epsd">
+<div class="ep-supply-demand">
+<div class="header">
+#{set} ($page_title = "節電バロメータ - Current")
+<h1>$!{page_title}</h1>
+<p>$!{updated} 更新</p>
+</div>
+<div class="mainContents">
+#{if} ($results)
+#{parse} ("tepco/vm/html/epsd-table.vm")
+#{include} ("tepco/footnote-min.html")
+#{end}
+</div>
+<div class="footer">
+<dl>
+<dt>Created by R-STYLE</dt>
+<dd>WebSite: <a href="http://r-styles.net/">R-STYLES.NET</a></dd>
+</dl>
+</div>
+</div>
+</body>

@@ -1,0 +1,29 @@
+<h2>電力使用率推移</h2>
+<p class="availability">ピーク時供給力(万kW): <strong>$!{availability}</strong></p>
+<p class="prospective">予想最大電力(万kW): <strong>$!{prospectiveAmount}</strong>（$!{prospectiveTime}）</p>
+<table border="1">
+<thead>
+<tr>
+<th>時台</th>
+<th>使用率(%)</th>
+<th>予測比(%)</th>
+</tr>
+</thead>
+<tbody>
+#{foreach} ($ret in $results)
+<tr#{if} (${ret.peaktime}) class="peak"#{end}>
+<td>${ret.time}</td>
+<td class="used">##
+#{if} (${ret.percentage} <= 0)
+<div class="none">${ret.percentage}</div>##
+#{elseif} (${ret.percentage} >= 80)
+<div class="warn" style="width: ${ret.percentage}px;">${ret.percentage}</div>##
+#{else}
+<div style="width: ${ret.percentage}px;">${ret.percentage}</div>##
+#{end}
+</td>
+<td class="yesterday#{if} (${ret.overhundred}) over#{end}">${ret.comparison}</td>
+</tr>##
+#{end}
+</tbody>
+</table>

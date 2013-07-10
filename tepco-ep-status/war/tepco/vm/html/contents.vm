@@ -1,0 +1,7 @@
+<div class="mainContents">
+#{parse} ("tepco/vm/html/twitter-info.vm")
+#{if} ($results)
+#{parse} ("tepco/vm/html/epsd-table.vm")
+#{include} ("tepco/footnote.html")
+#{end}
+</div>

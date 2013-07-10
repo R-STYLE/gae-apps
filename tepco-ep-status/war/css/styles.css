@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+* {
+font-family: sans-serif;
+}
+
+html, 
+body {
+margin: 0;
+paddin: 0;
+}
+
+body {
+font-size: .85em;
+color: #333;
+line-height: 1.2;
+}
+
+p {
+margin: .5em 0;
+}
+
+a {
+color: #c00;
+}
+
+a:visited {
+color: #333;
+}
+
+body.epsd, 
+body#tepco-epsd {
+background: #fff;
+border-top: .3em solid #333;
+width: 100%;
+}
+
+body.epsd h1, 
+body#tepco-epsd h1 {
+font-size: 1.5em;
+margin: .5em 0;
+}
+
+body#tepco-epsd h2 {
+font-size: 1.2em;
+margin: 1.5em 0 0;
+}
+
+body#tepco-epsd table {
+border: 1px solid #999;
+border-collapse: collapse;
+}
+body#tepco-epsd thead th {
+background: #333;
+color: #fff;
+font-weight: normal;
+text-align: left;
+}
+body#tepco-epsd thead th, 
+body#tepco-epsd tbody td {
+border: 1px solid #999;
+font-size: 1.2em;
+padding: .3em .2em;
+}
+body#tepco-epsd tbody td {
+font-size: 1.3em;
+text-align: right;
+}
+
+body#tepco-epsd .availability,
+body#tepco-epsd .prospective,
+body#tepco-epsd .current {
+font-size: .9em;
+margin: .5em 0;
+}
+
+body#tepco-epsd .availability strong,
+body#tepco-epsd .prospective strong,
+body#tepco-epsd .current strong {
+color: #c00;
+font-size: 1.5em;
+}
+
+body#tepco-epsd .used {
+background: #e0e0e0;
+color: #fff;
+padding: .3em 0;
+width: 100px;
+text-align: left;
+}
+
+body#tepco-epsd .used div {
+background: #36c;
+color: #fff;
+padding: .1em 0;
+text-indent: .2em;
+}
+
+body#tepco-epsd .used div.none {
+background: none;
+}
+
+body#tepco-epsd .used div.warn {
+background: #f60;
+}
+
+body#tepco-epsd .peak .used {
+background: #c00;
+text-align: left;
+}
+
+body#tepco-epsd .blackout .used {
+background: #000;
+}
+
+body#tepco-epsd .yesterday {
+color: #999;
+}
+
+body#tepco-epsd .over {
+color: #c00;
+}
+
+body#tepco-epsd .twitter {
+background: #eee;
+border: 1px solid #ccc;
+margin: .5em 0 1em;
+padding: .5em 1em;
+max-width: 500px;
+}
+
+body#tepco-epsd .twitter blockquote {
+margin: 0;
+padding: 0;
+}
+
+body#tepco-epsd .twitter cite {
+font-style: normal;
+}
+
+body#tepco-epsd .mainContents {
+margin: 0 auto;
+padding: .5em 2em;
+}
+
+body#tepco-epsd .mainContents dt {
+font-weight: bold;
+padding: 1.5em 0 .5em;
+}
+body#tepco-epsd .mainContents dd {
+padding: .5em 0;
+}
+
+body#tepco-epsd .note {
+font-size: .9em;
+line-height: 1.5;
+margin: 1.5em 0 0;
+}
+
+body#tepco-epsd .header {
+border-bottom: 1em solid #000;
+padding: 2em 2em .5em;
+}
+
+body#tepco-epsd .footer {
+background: #000;
+border-top: .5em solid #333;
+color: #999;
+margin-top: 1.5em;
+padding: .5em 2em 1.5em;
+}
+
+body#tepco-epsd .footer p.memo {
+color: #666;
+}
+
+body#tepco-epsd .ep-supply-demand {
+margin: 0 auto;
+padding: 0;
+}
+
+body#tepco-epsd .current {
+background: #eee;
+border: 1px solid #ccc;
+padding: .3em 0;
+width: 100%;
+}
+body#tepco-epsd .current p {
+background: #06c;
+color: #fff;
+}
+
+body#tepco-epsd .current p strong {
+color: #fff;
+}

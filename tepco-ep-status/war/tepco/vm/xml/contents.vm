@@ -1,0 +1,23 @@
+<availability title="ピーク時供給力(万kW)">
+	<amount unit="万kW">$!{availability}</amount>
+	<updated>$!{updated}</updated>
+</availability>
+<prospective title="予想最大電力(万kW)">
+	<amount unit="万kW">$!{prospectiveAmount}</amount>
+	<time>$!{prospectiveTime}</time>
+</prospective>
+<results>
+#{foreach} ($ret in $results)
+	<result ispeak="${ret.peaktime}">
+		<time>$!{ret.time}</time>
+		<used>
+			<amount unit="万kW">$!{ret.amount}</amount>
+			<percentage>$!{ret.percentage}</percentage>
+		</used>
+		<prediction>
+			<amount unit="万kW">$!{ret.prediction}</amount>
+			<comparison>$!{ret.comparison}</comparison>
+		</prediction>
+	</result>
+#{end}
+</results>

@@ -1,0 +1,9 @@
+#{if} ($twitterText) 
+<h2>停電情報</h2>
+<div class="twitter">
+<blockquote cite="http://twitter.com/#!/$!{twitterUser}/status/$!{twitterParmanentId}">
+<p>$!{twitterText}</p>
+</blockquote>
+<p>by <a href="http://twitter.com/#!/$!{twitterUser}">@$!{twitterUser}</a> from <a href="http://twitter.com/#!/$!{twitterUser}/status/$!{twitterParmanentId}">Twitter</a></p>
+</div>
+#{end}

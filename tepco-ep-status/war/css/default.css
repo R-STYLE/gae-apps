@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+* {
+font-family: monospace;
+}
+
+html {
+margin: 0;
+paddin: 0;
+}
+
+p {
+line-height: 1.2;
+margin: .5em 0;
+}
+
+a {
+color: #c00;
+}
+
+body.epsd, 
+body#tepco-epsd {
+background: #fff;
+border-top: .3em solid #333;
+color: #333;
+margin: 0;
+padding: 0;
+min-width: 320px;
+width: 100%;
+}
+
+body.epsd h1, 
+body#tepco-epsd h1 {
+font-size: 1.3em;
+margin: .5em 0;
+}
+
+body#tepco-epsd table {
+border: 1px solid #999;
+border-collapse: collapse;
+}
+body#tepco-epsd thead th {
+background: #333;
+color: #fff;
+font-weight: normal;
+text-align: left;
+}
+body#tepco-epsd th, td {
+font-size: 1em;
+padding: .2em;
+}
+body#tepco-epsd tbody td {
+text-align: right;
+}
+
+body#tepco-epsd .percentage {
+background: #e0e0e0;
+color: #fff;
+padding: .2em 0;
+width: 100px;
+text-align: left;
+}
+
+body#tepco-epsd .percentage div {
+background: #36c;
+color: #fff;
+text-indent: .2em;
+}
+
+body#tepco-epsd .peak .percentage {
+background: #c00;
+text-align: left;
+}
+
+body#tepco-epsd .blackout .percentage {
+background: #000;
+}
+
+body#tepco-epsd .today {
+color: #06c;
+}
+
+body#tepco-epsd .yesterday {
+color: #999;
+}
+
+body#tepco-epsd td.over {
+color: #c00;
+}
+
+body#tepco-epsd .mainContents {
+margin: 0 auto;
+padding: .5em 2em;
+}
+
+body#tepco-epsd .header {
+border-bottom: 1em solid #000;
+padding: 2em 2em .5em;
+}
+
+body#tepco-epsd .footer {
+background: #000;
+border-top: .5em solid #333;
+color: #999;
+margin-top: 1.5em;
+padding: .5em 2em 1.5em;
+}
+
+body#tepco-epsd .footer p.memo {
+color: #666;
+}
+
+body#tepco-epsd .ep-supply-demand {
+margin: 0 auto;
+padding: 0;
+}

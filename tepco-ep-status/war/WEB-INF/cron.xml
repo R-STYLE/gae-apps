@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+	<cron>
+		<url>/tepco/cron/sd-crawler</url>
+		<description>Repopulate the cache every 20 minutes</description>
+		<schedule>every 20 minutes</schedule>
+	</cron>
+	<cron>
+		<url>/tepco/cron/twitter-crawler</url>
+		<description>Repopulate the cache every 60 minites</description>
+		<schedule>every 60 minutes</schedule>
+	</cron>
+</cronentries>

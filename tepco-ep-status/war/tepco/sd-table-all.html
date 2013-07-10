@@ -1,0 +1,19 @@
+<body id="tepco-epsd">
+<div class="ep-supply-demand">
+<div class="header">
+#{set} ($page_title = "節電バロメータ")
+<h1>$!{page_title}</h1>
+<p>$!{updated} 更新</p>
+</div>
+#{parse} ("tepco/vm/html/contents.vm")
+<div class="footer">
+<p class="memo">他の可視化を考え中。</p>
+<p class="memo">何かあればTwitter等でお気軽にどうぞ。</p>
+<dl>
+<dt>Created by R-STYLE</dt>
+<dd>Twitter: <a href="http://twitter.com/#!/R_STYLE">@R_STYLE</a></dd>
+<dd>WebSite: <a href="http://r-styles.net/">R-STYLES.NET</a></dd>
+</dl>
+</div>
+</div>
+</body>

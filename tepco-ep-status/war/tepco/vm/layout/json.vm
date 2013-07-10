@@ -1,0 +1,7 @@
+#{if} ($callback)
+${callback}(##
+#{end}
+${screen_content}##
+#{if} ($callback) 
+)
+#{end}

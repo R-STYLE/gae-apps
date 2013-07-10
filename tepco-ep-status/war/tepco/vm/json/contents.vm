@@ -1,0 +1,9 @@
+{##
+"availability":{"amount":$!{availability},"updated":"$!{updated}"},##
+"prospective":{"amount":$!{prospectiveAmount},"time":"$!{prospectiveTime}"},##
+"results":[##
+#{foreach} ($ret in $results)
+#{if} ($velocityCount > 1),#{end}
+{"time":$!{ret.time},"used":$!{ret.amount},"prediction":$!{ret.prediction},"ispeak":$!{ret.peaktime}}##
+#{end}
+]}##
